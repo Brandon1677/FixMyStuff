@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FixMyStuff</title>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+    
+    <header>
+        <nav class="navbar">
+            <div class="logo-container">
+                <img src="img/logo.png" alt="FixMyStuff Logo" class="logo">
+            </div>
+            <button class="menu-toggle" id="menu-toggle">&#9776;</button>
+            <ul class="nav-links">
+                <li><a href="#banner">INICIO</a></li>
+                <li><a href="#nosotros">¿QUIÉNES SOMOS?</a></li>
+                <li><a href="#descargar">DESCARGAR</a></li>
+                <li><a href="#">INICIAR SESIÓN</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section id="banner" class="banner">
+            <div class="banner-content">
+                <div class="banner-text-box">
+                    <h1>FixMyStuff</h1>
+                    <p>
+                        Buscamos la reparación de artefactos dañados, dotándoles de una segunda vida y así evitando su desecho e impacto ambiental negativo. 
+                        Esto se logra mediante el contacto entre usuarios con artefactos dañados y profesionales dispuestos a poder arreglarlos.
+                    </p>
+                </div>
+                <div class="banner-side-image">
+                    <img src="img/reparacion.png" alt="Reparación" />
+                </div>
+            </div>
+
+            <div class="objetivo-content">
+                <h2>OBJETIVO</h2>
+                <p>
+                    Conectar a personas con artefactos dañados con técnicos y artesanos capacitados para repararlos, promoviendo 
+                    la reutilización de productos, reduciendo el impacto ambiental y fomentando el consumo responsable.
+                </p>
+            </div>
+        </section>
+
+        <section class="usuarios">
+            <div class="usuarios-intro">
+                <h2>USUARIOS</h2>
+                <p>
+                Mediante nuestros 2 tipos de usuarios podrán satisfacerse las necesidades de reparación de artefactos
+                </p>
+            </div>
+
+            <div class="usuarios-container">
+                <div class="usuario-box">
+                <img src="img/solicitante.png" alt="Solicitante">
+                <h3>Usuario Solicitante</h3>
+                <p>
+                    Usuario con un artefacto dañado que busca reparar y así evitar botarlo.
+                </p>
+                </div>
+                <div class="usuario-box">
+                <img src="img/tecnico.png" alt="Técnico">
+                <h3>Usuario Técnico</h3>
+                <p>
+                    Usuario que busca reparar artefactos de otros usuarios por un monto de dinero.
+                </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="nosotros" class="nosotros">
+            <div class="nosotros-header-box">
+                <h2 class="nosotros-titulo">QUIÉNES SOMOS</h2>
+                <p class="nosotros-descripcion">
+                FIXEM es una empresa nueva e innovadora con un propósito e importancia ambiental muy marcados, sin dejar de lado nuestra conciencia social.
+                </p>
+            </div>
+
+            <div class="nosotros-grid">
+                <div class="integrante">
+                    <img src="img/integrante3.jpg" alt="Integrante 1">
+                    <span>MANUEL ANGEL SANCHEZ ARENAS</span>
+                </div>
+                <div class="integrante">
+                    <img src="img/integrante3.jpg" alt="Integrante 2">
+                    <span>ADRIEL JOSE FLORES MASIAS</span>
+                </div>
+                <div class="integrante">
+                    <img src="img/integrante3.jpg" alt="Integrante 3">
+                    <span>BRANDON WILDER SOTO PALACIOS</span>
+                </div>
+                <div class="integrante">
+                    <img src="img/integrante3.jpg" alt="Integrante 4">
+                    <span>JEAN POOL ALEXANDER ARIAS TASAYCO </span>
+                </div>
+                <div class="integrante integrante-centrado">
+                    <img src="img/integrante3.jpg" alt="Integrante 5">
+                    <span>LUIS ALEXIS BARDALES TEJADA</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="descargar" class="descargar">
+            <div class="descargar-box">
+                <p class="descargar-texto">
+                Descarga nuestra aplicación móvil desde las principales tiendas digitales
+                </p>
+
+                <div class="descargar-logo">
+                    <img src="img/logo.png" alt="Logo Fixem">
+                </div>
+
+                <div class="descargar-botones">
+                    <div class="btn-box">
+                        <img src="img/googleplay.png" alt="Google Play">
+                    </div>
+                    <div class="btn-box">
+                        <img src="img/appstore.png" alt="App Store">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <small>
+                FixMyStuff Copyright &copy; 2025 - Universidad Peruana de Ciencias Aplicadas (UPC) <br>
+            </small>
+        </div>
+    </footer>
+
+
+    <script>
+        const toggle = document.getElementById('menu-toggle');
+        const nav = document.getElementById('nav-links');
+
+        toggle.addEventListener('click', () => {
+        nav.classList.toggle('active');
+        });
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const objetivo = document.querySelector('.objetivo-content');
+
+            function checkVisibility() {
+            const rect = objetivo.getBoundingClientRect();
+            const windowHeight = window.innerHeight;
+
+            if (rect.top <= windowHeight * 0.85) {
+                objetivo.classList.add('visible');
+                window.removeEventListener('scroll', checkVisibility);
+            }
+            }
+
+            window.addEventListener('scroll', checkVisibility);
+            checkVisibility();
+        });
+    </script>
+    
+</body>
+</html>
